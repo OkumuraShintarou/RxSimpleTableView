@@ -22,6 +22,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableViewDelegate()
+        configure()
     }
 }
 
@@ -53,8 +55,7 @@ extension ViewController {
     }
 
     func tablewViewRegister() {
-        let nib = UINib(nibName: "RxSimpleTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        tableView.register(UINib(nibName: "RxSimpleTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
     }
 
     func configureTableViewDelegate() {
