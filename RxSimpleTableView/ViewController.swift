@@ -36,8 +36,7 @@ extension ViewController {
 
     func bindCellItems() {
         vm.cellItems
-            .bind(to: tableView.rx.items(cellIdentifier: "Cell")) { _, element, cell in
-                let cell = cell as! RxSimpleTableViewCell
+            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: RxSimpleTableViewCell.self)) { _, element, cell in
                 cell.testLabel.text = element
             }
             .disposed(by: bag)
